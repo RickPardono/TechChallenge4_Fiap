@@ -1,0 +1,13 @@
+LINKS DA ENTREGA (Tech Challenge 4)
+
+1) Streamlit (sistema preditivo):
+- (colar aqui)
+
+2) Looker Studio (dashboard analítico):
+- (colar aqui)
+
+3) Repositório GitHub:
+- https://github.com/RickPardono/TechChallenge4_Fiap
+
+4) Vídeo da apresentação:
+- (colar aqui)
