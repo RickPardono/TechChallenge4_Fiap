@@ -4,5 +4,6 @@ scikit-learn
 joblib
 streamlit
 matplotlib
+seaborn
 imbalanced-learn
 xgboost
