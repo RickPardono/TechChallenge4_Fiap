@@ -3,7 +3,14 @@ from pathlib import Path
 import joblib
 import pandas as pd
 import streamlit as st
+import numpy as np
 
+# -----------------------------
+# Função utilizada no pré-processamento do pipeline de Machine Learning
+# -----------------------------
+def round_ordinal_cols(X):
+    X = X.copy()
+    return np.rint(X).astype(int)
 
 # -----------------------------
 # Config geral
