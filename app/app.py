@@ -5,101 +5,110 @@ import pandas as pd
 import streamlit as st
 import numpy as np
 
-# -----------------------------
-# Função utilizada no pré-processamento do pipeline de Machine Learning
-# (precisa existir para o unpickle do model.joblib)
-# -----------------------------
+# ----------------------------------------------------
+# Função usada no pipeline (precisa existir para o joblib carregar)
+# ----------------------------------------------------
 def round_ordinal_cols(X):
     X = X.copy()
     return np.rint(X).astype(int)
 
-# -----------------------------
+# ----------------------------------------------------
 # Config geral
-# -----------------------------
+# ----------------------------------------------------
 st.set_page_config(
     page_title="Predição de Obesidade",
     page_icon="🩺",
-    layout="wide",   # ✅ wide
+    layout="wide",
 )
 
-# -----------------------------
-# CSS (cards + títulos + fundo)
-# -----------------------------
+# ----------------------------------------------------
+# CSS (visual + correções)
+# ----------------------------------------------------
 st.markdown(
     """
     <style>
-      /* Fundo externo (fora do "card") */
       .stApp { background: #F3F4F6; }
 
-      /* Container central */
-      .block-container { padding-top: 1.2rem; max-width: 1200px; }
+      section.main > div {
+        max-width: 1100px;
+        padding-top: 2.2rem;
+      }
 
-      /* Cards */
+      .app-title {
+        font-size: 44px;
+        font-weight: 900;
+        line-height: 1.15;
+        margin: 0 0 0.35rem 0;
+      }
+      .app-subtitle {
+        color: rgba(0,0,0,0.60);
+        margin-top: 0;
+        margin-bottom: 1.2rem;
+        font-size: 16px;
+      }
+
       .card {
         background: #FFFFFF;
         border: 1px solid rgba(0,0,0,0.08);
         border-radius: 16px;
-        padding: 18px 18px;
-        box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+        padding: 22px 22px 10px 22px;
+        box-shadow: 0 10px 24px rgba(0,0,0,0.06);
       }
 
-      /* Título topo */
-      .title {
-        font-size: 40px;
-        font-weight: 850;
-        margin: 0 0 .25rem 0;
-        line-height: 1.15; /* evita “cortar” topo */
-      }
-
-      .subtitle {
-        color: rgba(0,0,0,0.65);
-        margin-top: 0;
-        margin-bottom: 0.75rem;
-      }
-
-      /* Títulos dos blocos (alinhado à esquerda + maior) */
-      .section-title {
+      .block-title {
         font-size: 28px;
-        font-weight: 800;
-        margin: 10px 0 6px 0;
-        text-align: left;
+        font-weight: 900;
+        margin: 0.6rem 0 0.6rem 0;
       }
 
-      .small-note {
-        font-size: 12px;
-        color: rgba(0,0,0,0.6);
-      }
-
-      /* Botão (ajuste leve: largura e borda) */
+      /* Botão azul */
       div.stButton > button {
-        border-radius: 10px;
-        padding: 0.55rem 1rem;
-        font-weight: 700;
+        background: #2563EB !important;
+        color: white !important;
+        border: 1px solid #2563EB !important;
+        border-radius: 10px !important;
+        padding: 0.6rem 1.0rem !important;
+        font-weight: 700 !important;
+      }
+      div.stButton > button:hover {
+        background: #1D4ED8 !important;
+        border-color: #1D4ED8 !important;
+      }
+
+      /* Radio azul */
+      input[type="radio"]{
+        accent-color: #2563EB;
+      }
+
+      hr {
+        margin: 1.1rem 0 1.1rem 0;
+        border: none;
+        border-top: 1px solid rgba(0,0,0,0.10);
       }
     </style>
     """,
     unsafe_allow_html=True
 )
 
-# -----------------------------
+# ----------------------------------------------------
 # Carregar modelo
-# -----------------------------
+# ----------------------------------------------------
 @st.cache_resource
 def load_model():
     model_path = Path("models/model.joblib")
     if not model_path.exists():
         st.error("Arquivo do modelo não encontrado em `models/model.joblib`.")
-        st.info("Envie o `model.joblib` para a pasta `models/` e tente novamente.")
+        st.info("Treine e salve o modelo, depois envie o `model.joblib` para a pasta `models/`.")
         st.stop()
     return joblib.load(model_path)
 
 model = load_model()
 
-# -----------------------------
-# Mapas PT -> EN (para o modelo)
-# -----------------------------
+# ----------------------------------------------------
+# Mapas PT -> EN (modelo)
+# ----------------------------------------------------
 MAP_GENDER = {"Feminino": "Female", "Masculino": "Male"}
-MAP_YESNO = {"Sim": "yes", "Não": "no"}
+MAP_YESNO  = {"Sim": "yes", "Não": "no"}
 
 MAP_CAEC = {"Não": "no", "Às vezes": "Sometimes", "Frequentemente": "Frequently", "Sempre": "Always"}
 MAP_CALC = {"Não": "no", "Às vezes": "Sometimes", "Frequentemente": "Frequently", "Sempre": "Always"}
@@ -112,30 +121,26 @@ MAP_MTRANS = {
     "A pé": "Walking",
 }
 
-# -----------------------------
+# ----------------------------------------------------
 # Cabeçalho
-# -----------------------------
-st.markdown('<div class="title">🩺 Sistema Preditivo de Obesidade</div>', unsafe_allow_html=True)
+# ----------------------------------------------------
+st.markdown('<div class="app-title">🩺 Sistema Preditivo de Obesidade</div>', unsafe_allow_html=True)
 st.markdown(
-    '<p class="subtitle">Preencha os dados do paciente para estimar a probabilidade de obesidade (classificação binária).</p>',
+    '<div class="app-subtitle">Preencha os dados do paciente para estimar a probabilidade de obesidade (classificação binária).</div>',
     unsafe_allow_html=True
 )
+st.info("**Observação:** Este sistema é um apoio à decisão e não substitui avaliação clínica.")
 
+# ----------------------------------------------------
+# Formulário (em um “card”)
+# ----------------------------------------------------
 st.markdown('<div class="card">', unsafe_allow_html=True)
-st.write("**Observação:** Este sistema é um apoio à decisão e não substitui avaliação clínica.")
-st.markdown('</div>', unsafe_allow_html=True)
 
-st.write("")
-
-# -----------------------------
-# Formulário
-# -----------------------------
 with st.form("form_paciente"):
-    st.markdown('<div class="card">', unsafe_allow_html=True)
 
-    # ====== DADOS DO PACIENTE ======
-    st.markdown('<div class="section-title">Dados do paciente</div>', unsafe_allow_html=True)
-    c1, c2, c3 = st.columns([1.2, 1.2, 1.6])
+    # -------------------- Dados do paciente --------------------
+    st.markdown('<div class="block-title">Dados do paciente</div>', unsafe_allow_html=True)
+    c1, c2, c3 = st.columns(3)
 
     with c1:
         genero_pt = st.radio("Gênero", ["Feminino", "Masculino"], horizontal=True)
@@ -150,13 +155,23 @@ with st.form("form_paciente"):
 
     st.divider()
 
-    # ====== HÁBITOS ALIMENTARES ======
-    st.markdown('<div class="section-title">Hábitos alimentares</div>', unsafe_allow_html=True)
-    a1, a2, a3 = st.columns([1.2, 2.0, 1.4])  # a2 mais largo p/ caber CAEC em 1 linha
+    # -------------------- Hábitos alimentares --------------------
+    st.markdown('<div class="block-title">Hábitos alimentares</div>', unsafe_allow_html=True)
+    a1, a2, a3 = st.columns(3)
 
     with a1:
+        # FCVC (1–3) via rádio
         fcvc_pt = st.radio("Costuma comer vegetais?", ["Raramente", "Às vezes", "Sempre"], horizontal=True)
-        ncp_pt = st.radio("Número de refeições diárias", ["1", "2", "3", "4 ou mais"], horizontal=True)
+
+        # ✅ NCP (1–4) via number_input
+        ncp = st.number_input(
+            "Número de refeições diárias (1 a 4)",
+            min_value=1,
+            max_value=4,
+            value=3,
+            step=1,
+            help="1 a 4 (use 4 para '4 ou mais')."
+        )
 
     with a2:
         caec_pt = st.radio(
@@ -164,57 +179,78 @@ with st.form("form_paciente"):
             ["Não", "Às vezes", "Frequentemente", "Sempre"],
             horizontal=True
         )
-        scc_pt = st.radio("Monitora a ingestão calórica?", ["Sim", "Não"], horizontal=True)
+        scc = st.radio("Monitora a ingestão calórica?", ["Sim", "Não"], horizontal=True)
 
     with a3:
-        ch2o_pt = st.radio("Consumo diário de água (litros)", ["< 1 L", "1–2 L", "> 2 L"], horizontal=True)
-        favc = st.radio("Costuma comer alimentos muito calóricos?", ["Sim", "Não"], horizontal=True)  # ✅ movido
+        # ✅ CH2O (1–3) via number_input
+        ch2o = st.number_input(
+            "Consumo diário de água (litros) — escala 1 a 3",
+            min_value=1,
+            max_value=3,
+            value=2,
+            step=1,
+            help="1=<1L | 2=1–2L | 3=>2L"
+        )
+
+        favc = st.radio("Costuma comer alimentos muito calóricos?", ["Sim", "Não"], horizontal=True)
 
     st.divider()
 
-    # ====== ATIVIDADE FÍSICA E ROTINA ======
-    st.markdown('<div class="section-title">Atividade física e rotina</div>', unsafe_allow_html=True)
-    r1, r2, r3 = st.columns([1.3, 1.6, 1.4])
+    # -------------------- Atividade física e rotina --------------------
+    st.markdown('<div class="block-title">Atividade física e rotina</div>', unsafe_allow_html=True)
+    b1, b2, b3 = st.columns(3)
 
-    with r1:
-        faf_pt = st.radio("Frequência de atividade física (dias/semana)", ["0", "1–2", "3–4", "5+"], horizontal=True)
+    with b1:
+        # ✅ FAF (0–3) via number_input
+        faf = st.number_input(
+            "Frequência de atividade física (dias/semana) — escala 0 a 3",
+            min_value=0,
+            max_value=3,
+            value=1,
+            step=1,
+            help="0=nenhuma | 1=1–2 dias | 2=3–4 dias | 3=5+ dias"
+        )
 
-    with r2:
-        tue_pt = st.radio("Tempo diário de uso de dispositivos eletrônicos (horas)", ["0–2 h", "3–5 h", "> 5 h"], horizontal=True)
+    with b2:
+        # ✅ TUE (0–2) via number_input
+        tue = st.number_input(
+            "Tempo diário de uso de dispositivos eletrônicos (horas) — escala 0 a 2",
+            min_value=0,
+            max_value=2,
+            value=1,
+            step=1,
+            help="0=0–2h | 1=3–5h | 2=5h+"
+        )
 
-    with r3:
-        mtrans_pt = st.selectbox("Meio de transporte habitual", ["Automóvel", "Moto", "Bicicleta", "Transporte público", "A pé"])
+    with b3:
+        mtrans_pt = st.selectbox(
+            "Meio de transporte habitual",
+            ["Automóvel", "Moto", "Bicicleta", "Transporte público", "A pé"]
+        )
 
     st.divider()
 
-    # ====== OUTROS HÁBITOS ======
-    st.markdown('<div class="section-title">Outros hábitos</div>', unsafe_allow_html=True)
-    o1, o2 = st.columns([1.6, 1.2])
+    # -------------------- Outros hábitos --------------------
+    st.markdown('<div class="block-title">Outros hábitos</div>', unsafe_allow_html=True)
+    o1, o2 = st.columns(2)
 
     with o1:
         calc_pt = st.radio("Consome bebida alcoólica?", ["Não", "Às vezes", "Frequentemente", "Sempre"], horizontal=True)
 
     with o2:
-        fuma = st.radio("Fuma?", ["Sim", "Não"], horizontal=True)  # ✅ movido
+        fuma = st.radio("Fuma?", ["Sim", "Não"], horizontal=True)
 
     st.write("")
     enviar = st.form_submit_button("Enviar para predição")
 
-    st.markdown('</div>', unsafe_allow_html=True)
+st.markdown('</div>', unsafe_allow_html=True)  # fecha card
 
-# -----------------------------
-# Helpers de mapeamento (PT -> valores esperados pelo modelo)
-# -----------------------------
-FCVC_MAP = {"Raramente": 1, "Às vezes": 2, "Sempre": 3}
-NCP_MAP = {"1": 1, "2": 2, "3": 3, "4 ou mais": 4}
-CH2O_MAP = {"< 1 L": 1, "1–2 L": 2, "> 2 L": 3}
-FAF_MAP = {"0": 0, "1–2": 1, "3–4": 2, "5+": 3}
-TUE_MAP = {"0–2 h": 0, "3–5 h": 1, "> 5 h": 2}
-
-# -----------------------------
-# Predição
-# -----------------------------
+# ----------------------------------------------------
+# Mapear inputs PT -> valores do modelo e prever
+# ----------------------------------------------------
 if enviar:
+    FCVC_MAP = {"Raramente": 1, "Às vezes": 2, "Sempre": 3}
+
     row = {
         "Gender": MAP_GENDER[genero_pt],
         "Age": int(idade),
@@ -223,29 +259,27 @@ if enviar:
         "family_history": MAP_YESNO[hist_fam],
         "FAVC": MAP_YESNO[favc],
         "FCVC": int(FCVC_MAP[fcvc_pt]),
-        "NCP": int(NCP_MAP[ncp_pt]),
+        "NCP": int(ncp),
         "CAEC": MAP_CAEC[caec_pt],
         "SMOKE": MAP_YESNO[fuma],
-        "CH2O": int(CH2O_MAP[ch2o_pt]),
-        "SCC": MAP_YESNO[scc_pt],
-        "FAF": int(FAF_MAP[faf_pt]),
-        "TUE": int(TUE_MAP[tue_pt]),
+        "CH2O": int(ch2o),
+        "SCC": MAP_YESNO[scc],
+        "FAF": int(faf),
+        "TUE": int(tue),
         "CALC": MAP_CALC[calc_pt],
         "MTRANS": MAP_MTRANS[mtrans_pt],
     }
 
     X_input = pd.DataFrame([row])
 
-    proba = float(model.predict_proba(X_input)[0][1])  # classe 1 = obeso
+    proba = float(model.predict_proba(X_input)[0][1])
     pred = int(model.predict(X_input)[0])
 
-    st.markdown('<div class="section-title">Resultado da predição</div>', unsafe_allow_html=True)
+    st.markdown("### Resultado da predição")
 
     if pred == 1:
         st.warning(f"**Classificação:** Obeso  \n**Probabilidade estimada:** {proba:.2%}")
-        st.write("**Mensagem ao profissional de saúde:** maior probabilidade de obesidade. Recomenda-se avaliação clínica e acompanhamento conforme protocolo.")
+        st.write("**Mensagem ao profissional de saúde:** o modelo sugere maior probabilidade de obesidade. Recomenda-se avaliação clínica e acompanhamento conforme protocolo institucional.")
     else:
         st.success(f"**Classificação:** Não obeso  \n**Probabilidade estimada:** {proba:.2%}")
-        st.write("**Mensagem ao profissional de saúde:** menor probabilidade de obesidade. Recomenda-se acompanhamento preventivo conforme contexto clínico.")
-
-    st.markdown('<p class="small-note">Nota: esta estimativa é probabilística e depende das informações inseridas.</p>', unsafe_allow_html=True)
+        st.write("**Mensagem ao profissional de saúde:** o modelo sugere menor probabilidade de obesidade. Recomenda-se manter acompanhamento e orientações preventivas conforme contexto clínico.")
