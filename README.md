@@ -39,4 +39,5 @@ Foram criadas as variável derivadas:
 
 • Variável Alvo: ObeseBinary (Obeso = 1 | Não Obeso = 0)
 ## 🧪 Estrutura do Repositório
-<img width="758" height="536" alt="Captura de tela 2026-02-18 142053" src="https://github.com/user-attachments/assets/10edcc0f-ff9d-4fee-b660-b759e26d7cae" />
+<img width="756" height="540" alt="Captura de tela 2026-02-18 143342" src="https://github.com/user-attachments/assets/2a8d4f49-eeee-426d-a6ec-6c4f75ad2e1f" />
+
