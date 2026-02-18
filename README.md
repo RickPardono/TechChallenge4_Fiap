@@ -58,7 +58,7 @@ Foram criadas as variável derivadas:
 ## 🤖 Modelagem Preditiva (02_modeling.ipynb)
 Construção do Pipeline de Pré-processamento: foi desenvolvido um ColumnTransformer para garantir:
 
- •Imputação de valores ausentes
+• Imputação de valores ausentes
 
 • Padronização de variáveis numéricas
 
@@ -72,7 +72,7 @@ Construção do Pipeline de Pré-processamento: foi desenvolvido um ColumnTransf
 
 Função personalizada utilizada no pipeline: a função round_original_cols foi utilizada via FunctionTransformer para corrigir ruído decimal em variáveis ordinais numéricas e ela também está presente no app.py, pois é necessária para que o joblib consiga reconstruir corretamente o pipeline no momento do deploy.
 
-Os Modelos testados foram:
+**Os Modelos testados foram:**
 
 •  Regressão Logística (baseline)
 
