@@ -15,6 +15,7 @@ Obesity.csv
 Local: Data/Raw/Processed/
 
 As variáveis incluem:
+
 • Dados demográficos (idade, gênero)
 
 • Histórico familiar
@@ -32,6 +33,7 @@ As variáveis incluem:
 • Peso e altura
 
 Foram criadas as variável derivadas:
+
 • IMC (Índice de Massa Corporal) -> Usada somente na Análise Exploratória e no Dashboard
 
 
