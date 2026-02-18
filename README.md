@@ -12,7 +12,7 @@ Este projeto foi desenvolvido como parte do Tech Challenge, com o objetivo de cr
 ## 📊 Base de Dados
 Obesity.csv
 
-Local: Data/Raw
+Local: data/raw
 
 As variáveis incluem:
 
