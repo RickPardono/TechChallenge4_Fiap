@@ -11,7 +11,9 @@ Este projeto foi desenvolvido como parte do Tech Challenge, com o objetivo de cr
 • Fornecer ferramentas para auxiliar a tomada de decisão da equipe médica
 ## 📊 Base de Dados
 Obesity.csv
+
 Local: Data/Raw/Processed/
+
 As variáveis incluem:
 • Dados demográficos (idade, gênero)
 
@@ -31,6 +33,7 @@ As variáveis incluem:
 
 Foram criadas as variável derivadas:
 • IMC (Índice de Massa Corporal) -> Usada somente na Análise Exploratória e no Dashboard
+
 
 • Variável Alvo: ObeseBinary (Obeso = 1 | Não Obeso = 0)
 ## 🧪 Estrutura do Repositório
