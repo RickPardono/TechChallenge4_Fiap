@@ -10,9 +10,9 @@ Este projeto foi desenvolvido como parte do Tech Challenge, com o objetivo de cr
 
 • Fornecer ferramentas para auxiliar a tomada de decisão da equipe médica
 ## 📊 Base de Dados
-Obesity.csv
+***Obesity.csv***
 
-Local: data/raw
+**Local:** data/raw
 
 As variáveis incluem:
 
@@ -43,11 +43,17 @@ Foram criadas as variável derivadas:
 
 ## 🔍 Análise Exploratória dos Dados (01_eda.ipynb)
 • Distribuição dos Níveis de Obesidade
+
 • Estatísticas Descritivas
+
 • Distribuição do IMC
+
 • Boxplots de IMC
+
 • Scatterplot de Relação entre Idade e IMC por Nível de Obesidade
+
 • Distribuições das variáveis
+
 • Probabilidades
 ## 🤖 Modelagem Preditiva (02_modeling.ipynb)
 Construção do Pipeline de Pré-processamento: foi desenvolvido um ColumnTransformer para garantir:
@@ -90,13 +96,13 @@ Foi aplicado GridSearchCV para ajuste de hiperparâmetros dentro do pipeline com
 
 ## 🔥 Resultados do Modelo:
 
-• Accuracy: 0.9976
+• **Accuracy:** 0.9976
 
-• Precision: 1.0000
+• **Precision:** 1.0000
 
-• Recall: 0.9949
+• **Recall:** 0.9949
 
-• F1-score: 0.9974
+• **F1-score:** 0.9974
 
 📌 Modelo salvo em: models/model.joblib
 
@@ -118,7 +124,7 @@ Dashboard desenvolvido no Looker Studio com:
 
 • Recomendações para a equipe médica
 
-🔗 Link disponível em links_entrega.txt
+**🔗 Link disponível em links_entrega.txt**
 
 ## 🌐 Aplicação Web – Streamlit
 Aplicação desenvolvida para:
@@ -131,5 +137,5 @@ Aplicação desenvolvida para:
 
 • Deploy realizado no Streamlit Cloud
 
-🔗 Link disponível em links_entrega.txt
+**🔗 Link disponível em links_entrega.txt**
 
