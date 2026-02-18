@@ -41,3 +41,95 @@ Foram criadas as variável derivadas:
 ## 🧪 Estrutura do Repositório
 <img width="756" height="540" alt="Captura de tela 2026-02-18 143342" src="https://github.com/user-attachments/assets/2a8d4f49-eeee-426d-a6ec-6c4f75ad2e1f" />
 
+## 🔍 Análise Exploratória dos Dados (01_eda.ipynb)
+• Distribuição dos Níveis de Obesidade
+• Estatísticas Descritivas
+• Distribuição do IMC
+• Boxplots de IMC
+• Scatterplot de Relação entre Idade e IMC por Nível de Obesidade
+• Distribuições das variáveis
+• Probabilidades
+## 🤖 Modelagem Preditiva (02_modeling.ipynb)
+Construção do Pipeline de Pré-processamento: foi desenvolvido um ColumnTransformer para garantir:
+
+ •Imputação de valores ausentes
+
+• Padronização de variáveis numéricas
+
+• Codificação de variáveis binárias
+
+• Tratamento de variáveis ordinais numéricas
+
+• Codificação de variáveis ordinais textuais
+
+• One-hot encoding para variáveis nominais
+
+Função personalizada utilizada no pipeline: a função round_original_cols foi utilizada via FunctionTransformer para corrigir ruído decimal em variáveis ordinais numéricas e ela também está presente no app.py, pois é necessária para que o joblib consiga reconstruir corretamente o pipeline no momento do deploy.
+
+Os Modelos testados foram:
+
+•  Regressão Logística (baseline)
+
+•  Random Forest
+
+•  XGBoost
+
+## 🏆 Modelo Final Selecionado:
+
+Optou-se pela Regressão Logística, pois apresentou:
+
+• Desempenho equivalente aos modelos mais complexos
+
+• Maior interpretabilidade
+
+• Menor risco de overfitting
+
+• Melhor aplicabilidade clínica
+
+Foi aplicado GridSearchCV para ajuste de hiperparâmetros dentro do pipeline completo.
+
+## 🔥 Resultados do Modelo:
+
+• Accuracy: 0.9976
+
+• Precision: 1.0000
+
+• Recall: 0.9949
+
+• F1-score: 0.9974
+
+📌 Modelo salvo em: models/model.joblib
+
+## 📊 Dashboard Analítico no Looker Studio
+
+Dashboard desenvolvido no Looker Studio com:
+
+• Filtros por página
+
+• Indicadores epidemiológicos
+
+• Fatores biológicos e comportamentais
+
+• Hábitos alimentares
+
+• Análise clínica do IMC
+
+• Conclusões estratégicas
+
+• Recomendações para a equipe médica
+
+🔗 Link disponível em links_entrega.txt
+
+## 🌐 Aplicação Web – Streamlit
+Aplicação desenvolvida para:
+
+• Inserção manual de variáveis
+
+• Predição de risco de obesidade
+
+• Exibição da probabilidade estimada
+
+• Deploy realizado no Streamlit Cloud
+
+🔗 Link disponível em links_entrega.txt
+
