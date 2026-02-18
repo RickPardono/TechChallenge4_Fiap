@@ -41,25 +41,17 @@ Foram criadas as variável derivadas:
 ## 🧪 Estrutura do Repositório
 TechChallenge4_Fiap/
 
-│
-
 ├── .streamlit/
 
 │   └── config.toml
-
-│
 
 ├── app/
 
 │   └── app.py
 
-│
-
 ├── dashboard/
 
 │   └── README.md
-
-│
 
 ├── data/
 
@@ -67,19 +59,13 @@ TechChallenge4_Fiap/
 
 │   │   └── Obesity.csv
 
-│   │
-
 │   └── processed/
 
 │       └── obesity_dashboard.xlsx
 
-│
-
 ├── models/
 
 │   └── model.joblib
-
-│
 
 ├── notebooks/
 
@@ -88,8 +74,6 @@ TechChallenge4_Fiap/
 │   ├── 02_modeling.ipynb
 
 │   └── 03_dashboard_prep.ipynb
-
-│
 
 ├── .gitignore
 
