@@ -1,2 +1,3 @@
-# TechChallenge4_Fiap
-Repositório criado para armazenar o conteúdo do Tech Challenge da Fase 4 do curso de Data Analytics da FIAP.
+# Tech Challenge - Sistema Preditivo de Obesidade
+## 📋 Sobre o Projeto
+Este projeto foi desenvolvido como parte do Tech Challenge, com o objetivo de criar um sistema de Machine Learning para auxiliar a equipe médica a prever se uma pessoa pode ter obesidade.
