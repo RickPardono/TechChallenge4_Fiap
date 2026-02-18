@@ -39,3 +39,35 @@ Foram criadas as variável derivadas:
 
 • Variável Alvo: ObeseBinary (Obeso = 1 | Não Obeso = 0)
 ## 🧪 Estrutura do Repositório
+TechChallenge4_Fiap/
+│
+├── .streamlit/
+│   └── config.toml
+│
+├── app/
+│   └── app.py
+│
+├── dashboard/
+│   └── README.md
+│
+├── data/
+│   ├── raw/
+│   │   └── Obesity.csv
+│   │
+│   └── processed/
+│       └── obesity_dashboard.xlsx
+│
+├── models/
+│   └── model.joblib
+│
+├── notebooks/
+│   ├── 01_eda.ipynb
+│   ├── 02_modeling.ipynb
+│   └── 03_dashboard_prep.ipynb
+│
+├── .gitignore
+├── links_entrega.txt
+├── requirements.txt
+├── runtime.txt
+└── README.md
+
