@@ -125,7 +125,7 @@ Dashboard desenvolvido no Looker Studio com:
 
 **🔗 Link disponível em links_entrega.txt**
 
-**Nota: O notebook disponível em notebooks/03_dashboard_prep.ipynb tem como finalidade preparar a base de dados Obesity.csv, gerando o arquivo "obesity_dashboard.xlsx" que conecta-se ao Looker Studio e constitui a base para construção do painel interativo. O arquivo "obesity_dashboard.xlsx" encontra-se em data/processed .**
+**Nota:** O notebook disponível em notebooks/03_dashboard_prep.ipynb tem como finalidade preparar a base de dados Obesity.csv, gerando o arquivo "obesity_dashboard.xlsx" que conecta-se ao Looker Studio e constitui a base para construção do painel interativo. O arquivo "obesity_dashboard.xlsx" encontra-se em data/processed .
 
 ## 🌐 Aplicação Web – Streamlit
 Aplicação desenvolvida com:
