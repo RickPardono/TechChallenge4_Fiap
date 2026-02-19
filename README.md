@@ -56,7 +56,7 @@ Foram criadas as variável derivadas:
 
 • Probabilidades
 ## 🤖 Modelagem Preditiva (02_modeling.ipynb)
-Construção do Pipeline de Pré-processamento: foi desenvolvido um ColumnTransformer para garantir:
+#🧱**Construção do Pipeline de Pré-processamento: foi desenvolvido um ColumnTransformer para garantir:**
 
 • Imputação de valores ausentes
 
