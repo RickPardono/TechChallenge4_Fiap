@@ -81,7 +81,7 @@ Função personalizada utilizada no pipeline: a função round_original_cols foi
 
 ## 🏆 Modelo Final Selecionado:
 
-Optou-se pela Regressão Logística, pois apresentou:
+Optou-se pela **Regressão Logística**, pois apresentou:
 
 • Desempenho equivalente aos modelos mais complexos
 
@@ -128,7 +128,13 @@ Dashboard desenvolvido no Looker Studio com:
 **Nota: O notebook disponível em notebooks/03_dashboard_prep.ipynb tem como finalidade preparar a base de dados Obesity.csv para utilização em painel interativo do Looker Studio, gerando o arquivo "obesity_dashboard.xlsx" que está localizado em data/processed .**
 
 ## 🌐 Aplicação Web – Streamlit
-Aplicação desenvolvida para:
+Aplicação desenvolvida com:
+
+• Layout wide
+
+• Tema claro
+
+• Organização por blocos: Dados do paciente, Hábitos alimentares, Atividade física e rotina, Outros hábitos
 
 • Inserção manual de variáveis
 
@@ -140,3 +146,4 @@ Aplicação desenvolvida para:
 
 **🔗 Link disponível em links_entrega.txt**
 
+## 🚀 Como Executar o Projeto
