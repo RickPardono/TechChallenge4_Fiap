@@ -169,11 +169,11 @@ python -m venv venv
 
 **Ativar:**
 
-No Windows:
+**No Windows:**
 
 venv\Scripts\activate
 
-No Mac/Linux:
+**No Mac/Linux:**
 
 source venv/bin/activate
 
@@ -199,5 +199,9 @@ streamlit run app/app.py
 
 http://localhost:8501
 
+## Autor do Projeto
 
+**Ricardo Pardono**
+
+**Contato:** rpardono@gmail.com
 
