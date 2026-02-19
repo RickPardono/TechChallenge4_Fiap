@@ -123,7 +123,7 @@ Dashboard desenvolvido no Looker Studio com:
 
 • Recomendações para a equipe médica
 
-**🔗 Link disponível em links_entrega.txt**
+🔗 Link: https://lookerstudio.google.com/reporting/1c680226-1b58-4c26-a60a-436e11feb595 
 
 **Nota:** O notebook disponível em notebooks/03_dashboard_prep.ipynb tem como finalidade preparar a base de dados Obesity.csv, gerando o arquivo "obesity_dashboard.xlsx" que conecta-se ao Looker Studio e constitui a base para construção do painel interativo. O arquivo "obesity_dashboard.xlsx" encontra-se em data/processed .
 
