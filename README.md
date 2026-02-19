@@ -144,9 +144,9 @@ Aplicação desenvolvida com:
 
 • Deploy realizado no Streamlit Cloud
 
-**🔗 Link disponível em links_entrega.txt**
+🔗 Link: https://sistema-preditivo-obesidade-ricardo-pardono.streamlit.app
 
-## 🚀 Como Executar o Projeto
+## 🚀 Como Executar o Projeto 
 🔹 **1. Pré-requisitos:**
 
 • Python 3.11
