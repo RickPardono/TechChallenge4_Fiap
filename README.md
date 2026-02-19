@@ -14,7 +14,7 @@ Este projeto foi desenvolvido como parte do Tech Challenge, com o objetivo de cr
 
 **Local:** data/raw
 
-As variáveis incluem:
+**As variáveis incluem:**
 
 • Dados demográficos (idade, gênero)
 
@@ -32,10 +32,9 @@ As variáveis incluem:
 
 • Peso e altura
 
-Foram criadas as variável derivadas:
+**Foram criadas as variável derivadas:**
 
 • IMC (Índice de Massa Corporal) -> Usada somente na Análise Exploratória e no Dashboard
-
 
 • Variável Alvo: ObeseBinary (Obeso = 1 | Não Obeso = 0)
 ## 🧪 Estrutura do Repositório
