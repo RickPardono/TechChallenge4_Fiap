@@ -147,3 +147,57 @@ Aplicação desenvolvida com:
 **🔗 Link disponível em links_entrega.txt**
 
 ## 🚀 Como Executar o Projeto
+🔹 **1. Pré-requisitos:**
+
+• Python 3.11
+
+• pip atualizado
+
+• Git instalado
+
+• Conta no Streamlit (para deploy opcional)
+
+🔹 **2. Clonar o repositório:**
+
+git clone https://github.com/RickPardono/TechChallenge4_Fiap.git
+
+cd TechChallenge4_Fiap
+
+🔹 **3. Criar ambiente virtual**
+
+python -m venv venv
+
+**Ativar:**
+
+No Windows:
+
+venv\Scripts\activate
+
+No Mac/Linux:
+
+source venv/bin/activate
+
+🔹 **4. Instalar dependências**:
+
+pip install -r requirements.txt
+
+🔹 **5. Gerar o modelo (caso não exista):**
+
+notebooks/02_modeling.ipynb
+
+**Ao final, o modelo será salvo em:**
+
+models/model.joblib
+
+**⚠️ Caso o arquivo já esteja presente na pasta models/, essa etapa pode ser ignorada.**
+
+🔹 **6. Executar a aplicação Streamlit localmente:**
+
+streamlit run app/app.py
+
+**A aplicação abrirá em:**
+
+http://localhost:8501
+
+
+
