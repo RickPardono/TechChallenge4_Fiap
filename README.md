@@ -41,7 +41,7 @@ Foram criadas as variável derivadas:
 ## 🧪 Estrutura do Repositório
 <img width="756" height="540" alt="Captura de tela 2026-02-18 143342" src="https://github.com/user-attachments/assets/2a8d4f49-eeee-426d-a6ec-6c4f75ad2e1f" />
 
-## 🔍 Análise Exploratória dos Dados (01_eda.ipynb)
+## 🔍 Análise Exploratória dos Dados (notebooks/01_eda.ipynb)
 • Distribuição dos Níveis de Obesidade
 
 • Estatísticas Descritivas
@@ -55,8 +55,8 @@ Foram criadas as variável derivadas:
 • Distribuições das variáveis
 
 • Probabilidades
-## 🤖 Modelagem Preditiva (02_modeling.ipynb)
-### 🧱**Construção do Pipeline de Pré-processamento: foi desenvolvido um ColumnTransformer para garantir:**
+## 🤖 Modelagem Preditiva (notebooks/02_modeling.ipynb)
+### 🧱**Construção do Pipeline de Pré-processamento com ColumnTransformer para garantir:**
 
 • Imputação de valores ausentes
 
@@ -72,7 +72,7 @@ Foram criadas as variável derivadas:
 
 Função personalizada utilizada no pipeline: a função round_original_cols foi utilizada via FunctionTransformer para corrigir ruído decimal em variáveis ordinais numéricas e ela também está presente no app.py, pois é necessária para que o joblib consiga reconstruir corretamente o pipeline no momento do deploy.
 
-### 🔍**Os Modelos testados foram:**
+### 🔍**Modelos Testados:**
 
 •  Regressão Logística (baseline)
 
