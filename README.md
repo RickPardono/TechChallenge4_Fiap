@@ -43,6 +43,10 @@ Este projeto foi desenvolvido como parte do Tech Challenge, com o objetivo de cr
 <img width="756" height="540" alt="Captura de tela 2026-02-18 143342" src="https://github.com/user-attachments/assets/2a8d4f49-eeee-426d-a6ec-6c4f75ad2e1f" />
 
 ## 🔍 Análise Exploratória dos Dados (notebooks/01_eda.ipynb)
+• Arredondamento das variáveis ordinais com ruídos decimais
+
+• Feature Engineering: criação da variável IMC somente usada na EDA e no Dasboard
+
 • Distribuição dos Níveis de Obesidade
 
 • Estatísticas Descritivas
