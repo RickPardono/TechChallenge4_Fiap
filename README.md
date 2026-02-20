@@ -14,6 +14,8 @@ Este projeto foi desenvolvido como parte do Tech Challenge, com o objetivo de cr
 
 **Local:** data/raw
 
+**Shape:** 2111 linhas e 17 colunas
+
 **As variáveis incluem:**
 
 • Dados demográficos (idade, gênero)
