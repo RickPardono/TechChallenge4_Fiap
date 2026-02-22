@@ -153,7 +153,7 @@ Aplicação desenvolvida com:
 🔗 Link: https://sistema-preditivo-obesidade-ricardo-pardono.streamlit.app
 
 ## 🎥 Vídeo de Apresentação
-Assista ao vídeo completo clicando no link:
+Assista ao vídeo completo clicando no link: https://youtu.be/kPesPHEwnKA
 
 ## 🚀 Como Executar o Projeto 
 🔹 **1. Pré-requisitos:**
