@@ -1,13 +1,13 @@
 LINKS DA ENTREGA (Tech Challenge 4):
 
 1) Streamlit (sistema preditivo):
-🔗 https://sistema-preditivo-obesidade-ricardo-pardono.streamlit.app
+ https://sistema-preditivo-obesidade-ricardo-pardono.streamlit.app
 
 2) Looker Studio (dashboard analítico):
-🔗 https://lookerstudio.google.com/reporting/1c680226-1b58-4c26-a60a-436e11feb595/page/7UdoF
+ https://lookerstudio.google.com/reporting/1c680226-1b58-4c26-a60a-436e11feb595/page/7UdoF
 
 3) Repositório GitHub:
-🔗 https://github.com/RickPardono/TechChallenge4_Fiap 
+ https://github.com/RickPardono/TechChallenge4_Fiap 
 
 4) Vídeo da apresentação:
-- (colar aqui)
+ https://youtu.be/kPesPHEwnKA
